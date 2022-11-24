@@ -18,3 +18,18 @@ services:
     command: python manage.py runserver 0.0.0.0:7050
     ports:
       - 7050:7050
+  mongo:
+    image: mongo:4
+    ports:
+      - 27017:27017
+    volumes:
+      - /data/pypistats:/data/db
+  pypistat:
+    build:
+      context: mongo
+    ports:
+      - 8000:8000
+    volumes:
+      - /home/ignatov/dev/query/shaped-canyon-309513-b51434997ca9.json:/tmp/shaped-canyon-309513-b51434997ca9.json
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/tmp/shaped-canyon-309513-b51434997ca9.json

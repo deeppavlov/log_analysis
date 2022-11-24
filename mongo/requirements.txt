@@ -1,0 +1,12 @@
+uvicorn==0.11.7
+fastapi==0.87.0
+pandas==1.5.1
+matplotlib==3.0.2
+pymongo==4.2.0
+google_cloud_bigquery==3.3.1
+openpyxl
+tqdm
+pypdf2==2.11.2
+pycountry==22.3.5
+geopandas==0.12.1
+mapclassify==2.4.3
